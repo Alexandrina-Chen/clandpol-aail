@@ -1,0 +1,75 @@
+# ser.ff, version 2024-02-03
+# compatible with CL&P molecular force field for ionic liquids
+# Sijia Chen, Chunyu Yang
+# questions/comments/bug reports: sijiachen@uchicago.edu
+#
+# units: kJ/mol, Angstrom, degree, charge(e)
+# 
+# bond and angle potentials are in the form of k/2 * (r-r0)^2 and k/2 * (theta-theta0)^2
+# dihedral potentials are in the opls form of k1/2*(1+cos(phi))+k2/2*(1-cos(2*phi))+k3/2*(1+cos(3*phi))+k4/2*(1-cos(4*phi))
+# improper potentials are using opls form as well, with the third atom as the central atom
+
+ATOMS
+# name  type       m/u        q/e    pot      sigma    epsilon
+# serine anion
+NSE      NAA    14.007     -0.970     lj       3.30   0.711280
+HNS       HN     1.008      0.330     lj       0.00   0.000000
+CAS      CTA    12.011      0.260     lj       3.50   0.276144
+HAS       H1     1.008     -0.050     lj       2.50   0.125520
+CBS      CT2    12.011      0.375     lj       3.50   0.276144
+HBS       H1     1.008     -0.065     lj       2.50   0.125520
+OGS       OH    15.999     -0.730     lj       3.12   0.711280
+HGS       HO     1.008      0.405     lj       0.00   0.000000
+CO2S     CO2    12.011      0.810     lj       3.55   0.292880
+O2S       O2    15.999     -0.815     lj       2.96   0.878640
+
+BONDS
+# at1 at2      pot         r0          k
+HN    NAA     cons      1.010   3631.712
+CTA   NAA     harm      1.448   3196.576
+CTA   H1      cons      1.090   2845.120
+CT2   CTA     harm      1.529   2242.624
+CT2   H1      cons      1.090   2845.120
+CT2   OH      harm      1.410   2677.760
+HO    OH      cons      0.945   4627.504
+CO2   CTA     harm      1.522   2652.656
+CO2   O2      harm      1.250   5489.408
+
+ANGLES
+# at1 at2   at3      pot     theta0          k
+HN    NAA   HN      harm    106.400    364.845
+CTA   NAA   HN      harm    109.500    292.880
+H1    CTA   NAA     harm    109.500    292.880
+CT2   CTA   NAA     harm    109.470    470.282
+CTA   CT2   H1      harm    110.700    313.800
+CTA   CT2   OH      harm    109.500    418.400
+CT2   OH    HO      harm    108.500    460.240
+CO2   CTA   NAA     harm    111.200    669.440
+CTA   CO2   O2      harm    117.000    585.760
+CT2   CTA   H1      harm    110.700    313.800
+H1    CT2   H1      harm    107.800    276.144
+CO2   CTA   CT2     harm    111.100    527.184
+H1    CT2   OH      harm    109.500    292.880
+CO2   CTA   H1      harm    109.500    292.880
+O2    CO2   O2      harm    126.000    669.440
+
+DIHEDRALS
+# at1 at2   at3   at4      pot         k1         k2         k3         k4
+H1    CTA   NAA   HN      opls      0.000      0.000      1.674      0.000
+H1    CT2   CTA   NAA     opls     -4.238     -2.966      1.979      0.000
+CTA   CT2   OH    HO      opls     -1.490     -0.728      2.059      0.000
+NAA   CTA   CO2   O2      opls     22.008      3.431      0.000      0.000
+CO2   CTA   NAA   HN      opls     -0.795     -1.745      1.749      0.000
+CT2   CTA   NAA   HN      opls     -0.795     -1.745      1.749      0.000
+H1    CTA   CO2   O2      opls      0.000      0.000      0.000      0.000
+NAA   CTA   CT2   OH      opls     33.472      0.000      0.000      0.000
+CT2   CTA   CO2   O2      opls      0.000      0.000      0.000      0.000
+CO2   CTA   CT2   H1      opls      0.000      0.000     -0.418      0.000
+H1    CTA   CT2   H1      opls      0.000      0.000      1.255      0.000
+CO2   CTA   CT2   OH      opls    -25.857      0.000      0.000      0.000
+H1    CT2   OH    HO      opls      0.000      0.000      1.473      0.000
+H1    CTA   CT2   OH      opls      0.000      0.000      1.958      0.000
+
+IMPROPERS
+# at1 at2  at3  at4        pot         k1         k2         k3         k4
+CTA   O2    CO2   O2      opls      0.000     87.864      0.000      0.000

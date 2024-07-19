@@ -1,0 +1,98 @@
+# pro.ff, version 2024-02-02
+# compatible with CL&P molecular force field for ionic liquids
+# Sijia Chen, Chunyu Yang
+# questions/comments/bug reports: sijiachen@uchicago.edu
+#
+# units: kJ/mol, Angstrom, degree, charge(e)
+# 
+# bond and angle potentials are in the form of k/2 * (r-r0)^2 and k/2 * (theta-theta0)^2
+# dihedral potentials are in the opls form of k1/2*(1+cos(phi))+k2/2*(1-cos(2*phi))+k3/2*(1+cos(3*phi))+k4/2*(1-cos(4*phi))
+# improper potentials are using opls form as well, with the third atom as the central atom
+
+ATOMS
+# name  type       m/u        q/e    pot      sigma    epsilon
+# proline anion
+NPR      NAA    14.007     -0.760     lj       3.30   0.711280
+HNP       HN     1.008      0.320     lj       0.00   0.000000
+CAP      CTA    12.011      0.165     lj       3.50   0.276144
+HAP       H1     1.008     -0.045     lj       2.50   0.125520
+CBP      CT2    12.011      0.180     lj       3.50   0.276144
+HBP       H1     1.008     -0.050     lj       2.50   0.125520
+CGP      CT2    12.011     -0.125     lj       3.50   0.276144
+HGP       H1     1.008     -0.010     lj       2.50   0.125520
+CDP      CT3    12.011      0.370     lj       3.50   0.276144
+HDP       H1     1.008     -0.075     lj       2.50   0.125520
+CO2P     CO2    12.011      0.885     lj       3.55   0.292880
+O2P       O2    15.999     -0.860     lj       2.96   0.878640
+
+BONDS
+# at1 at2      pot         r0          k
+HN    NAA     cons      1.010   3631.712
+CTA   NAA     harm      1.448   3196.576
+CTA   H1      cons      1.090   2845.120
+CT2   CTA     harm      1.529   2242.624
+CT2   H1      cons      1.090   2845.120
+CT2   CT2     harm      1.529   2242.624
+CT3   NAA     harm      1.448   3196.576
+CT3   H1      cons      1.090   2845.120
+CO2   CTA     harm      1.522   2652.656
+CO2   O2      harm      1.250   5489.408
+CT2   CT3     harm      1.529   2242.624
+
+ANGLES
+# at1 at2   at3      pot     theta0          k
+CTA   NAA   HN      harm    109.500    292.880
+H1    CTA   NAA     harm    109.500    292.880
+CT2   CTA   NAA     harm    109.470    470.282
+CTA   CT2   H1      harm    110.700    313.800
+CT2   CT2   CTA     harm    112.700    488.273
+CT2   CT2   H1      harm    110.700    313.800
+CT3   NAA   HN      harm    109.500    292.880
+H1    CT3   NAA     harm    109.500    292.880
+CO2   CTA   NAA     harm    111.200    669.440
+CTA   CO2   O2      harm    117.000    585.760
+CT3   CT2   H1      harm    110.700    313.800
+CO2   CTA   CT2     harm    111.100    527.184
+O2    CO2   O2      harm    126.000    669.440
+CT2   CT3   NAA     harm    109.470    470.282
+CT2   CT3   H1      harm    110.700    313.800
+H1    CT2   H1      harm    107.800    276.144
+H1    CT3   H1      harm    107.800    276.144
+CT2   CTA   H1      harm    110.700    313.800
+CT3   NAA   CTA     harm    107.200    433.462
+CO2   CTA   H1      harm    109.500    292.880
+CT2   CT2   CT3     harm    112.700    488.273
+
+DIHEDRALS
+# at1 at2   at3   at4      pot         k1         k2         k3         k4
+H1    CTA   NAA   HN      opls      0.000      0.000      1.674      0.000
+H1    CT2   CTA   NAA     opls     -4.238     -2.966      1.979      0.000
+CTA   CT2   CT2   H1      opls      0.000      0.000      1.255      0.000
+NAA   CTA   CO2   O2      opls     22.008      3.431      0.000      0.000
+CO2   CTA   CT2   H1      opls      0.000      0.000     -0.418      0.000
+H1    CT2   CT2   H1      opls      0.000      0.000      1.255      0.000
+CO2   CTA   NAA   CT3     opls      1.741     -0.536      2.908      0.000
+CT2   CTA   NAA   CT3     opls      1.741     -0.536      2.908      0.000
+CT2   CTA   CO2   O2      opls      0.000      0.000      0.000      0.000
+H1    CTA   CO2   O2      opls      0.000      0.000      0.000      0.000
+CTA   NAA   CT3   H1      opls      0.000      0.000      2.343      0.000
+CT2   CT2   CTA   H1      opls      0.000      0.000      1.255      0.000
+CT2   CT2   CT3   NAA     opls     10.008     -2.820      2.301      0.000
+H1    CTA   CT2   H1      opls      0.000      0.000      1.255      0.000
+CT2   CT3   NAA   HN      opls     -0.795     -1.745      1.749      0.000
+H1    CT2   CT3   H1      opls      0.000      0.000      1.255      0.000
+H1    CT2   CT3   NAA     opls     -4.238     -2.966      1.979      0.000
+CT2   CT2   CT3   H1      opls      0.000      0.000      1.255      0.000
+CT3   CT2   CT2   CTA     opls      5.439     -0.837      0.837      0.000
+H1    CT3   NAA   HN      opls      0.000      0.000      1.674      0.000
+CT2   CTA   NAA   HN      opls     -0.795     -1.745      1.749      0.000
+CO2   CTA   NAA   HN      opls     -0.795     -1.745      1.749      0.000
+CT2   CT2   CTA   NAA     opls     10.008     -2.820      2.301      0.000
+CO2   CTA   CT2   CT2     opls     -8.619     -1.310      1.318      0.000
+CT3   NAA   CTA   H1      opls      0.000      0.000      2.343      0.000
+CT3   CT2   CT2   H1      opls      0.000      0.000      1.255      0.000
+CT2   CT3   NAA   CTA     opls      1.741     -0.536      2.908      0.000
+
+IMPROPERS
+# at1 at2  at3  at4        pot         k1         k2         k3         k4
+CTA   O2    CO2   O2      opls      0.000     87.864      0.000      0.000

@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# modifyLJ.py - modify the sigma LJ parameters in the pair.lmp file 
+# to tune the LJ parameters for strong hydrogen bonding systems
+# Sijia Chen <sijiachen@uchicago.edu>
+# version 2024/03/25
+
+import os
+import sys
+import argparse
+
+
+class LjPair:
+    def __init__(self, atom1, atom2, epsilon, sigma):
+        """
+        Parameters
+        ----------
+        atom1 : str
+            atom type 1
+        atom2 : str
+            atom type 2
+        epsilon : float
+            LJ epsilon
+        sigma : float
+            LJ sigma
+
+        """
+        self.atom1 = atom1.lower()
+        self.atom2 = atom2.lower()
+        self.epsilon = epsilon
+        self.sigma = sigma
+
+    def __str__(self):
+        return f'{self.atom1} {self.atom2} {self.epsilon} {self.sigma}'
+
+    def __repr__(self):
+        return f'{self.atom1} {self.atom2} {self.epsilon} {self.sigma}'
+
+def read_modify_lj(modify_lj_file):
+    lj_pairs = []
+    with open(modify_lj_file, 'r') as f:
+        for line in f:
+            if line.startswith('#') or not line.strip():
+                continue
+            atom1, atom2, epsilon, sigma = line.split()
+            epsilon = float(epsilon)
+            sigma = float(sigma)
+            # check repeated LJ pairs
+            if (atom1, atom2) in [(pair.atom1, pair.atom2) for pair in lj_pairs] or (atom2, atom1) in [(pair.atom1, pair.atom2) for pair in lj_pairs]:
+                print(f'Warning: repeated LJ pair: {atom1} {atom2}, ignore the second one')
+                continue
+            lj_pairs.append(LjPair(atom1, atom2, epsilon, sigma))
+
+    return lj_pairs
+
+
+def modify_lj_pair(lmp_file, new_lmp_file, lj_pairs):
+    modified_pairs = []
+    new_lines = []
+    new_lines.append(f'# lines ends with ! mean that the sigma parameter is manually changed\n')
+    with open(lmp_file, 'r') as f:
+        for line in f:
+            check = False
+            if not line.startswith('pair_coeff'):
+                new_lines.append(line)
+                continue
+            tokens = line.strip().split()
+            tokens[1] = int(tokens[1])
+            tokens[2] = int(tokens[2])
+            tokens[4] = float(tokens[4])
+            tokens[5] = float(tokens[5])
+            if len(tokens) < 9:
+                raise ValueError(f'Invalid pair_coeff line: {line}. Expected at least 9 tokens including comment sign (#) and two atom type names')
+            atom1 = tokens[7].lower()
+            atom2 = tokens[8].lower()
+            for lj_pair in lj_pairs:
+                if (lj_pair.atom1 == atom1 and lj_pair.atom2 == atom2) or (lj_pair.atom1 == atom2 and lj_pair.atom2 == atom1):
+                    tokens[5] = lj_pair.sigma
+                    check = True
+                    modified_pairs.append(lj_pair)
+                    break
+            comment = " ".join(tokens[9:])
+            if check:
+                comment += ' !'
+            new_lines.append("{0:s} {1:4d} {2:4d} {3:18s} {4:10.6f}   {5:10.6f} {6:s} {7:s} {8:s} {9:s}\n".format(*tokens[:9], comment)) 
+
+    # report the modified LJ pairs
+    print("--------------------------------------------")
+    print("Modified LJ pairs:")
+    for pair in modified_pairs:
+        print(pair)
+    print("--------------------------------------------")
+
+    # write the new pair.lmp file
+    with open(new_lmp_file, 'w') as f:
+        f.writelines(new_lines)
+
+def main():
+    parser = argparse.ArgumentParser(description='Modify the sigma LJ parameters in the pair.lmp file')
+    parser.add_argument("-ip", '--input_pair_file', type=str, default="pair-sc.lmp", help='pair-sc.lmp file to be modified, default value: pair-sc.lmp')
+    parser.add_argument("-lj",'--modify_lj_data_file', type=str, default = "modified_lj.data", help='file containing the new LJ parameters, default value: modified_lj.data')
+    parser.add_argument("-op", '--output_pair_file', type=str, default = "pair-sc-modified.lmp", help='output file name of the new pair-sc.lmp file, default value: pair-sc-modified.lmp')
+    args = parser.parse_args()
+
+    lmp_file = args.input_pair_file
+    modify_lj_file = args.modify_lj_data_file
+    new_lmp_file = args.output_pair_file
+
+    lj_pairs = read_modify_lj(modify_lj_file)
+    modify_lj_pair(lmp_file, new_lmp_file, lj_pairs)
+
+
+if __name__ == '__main__':
+    main()

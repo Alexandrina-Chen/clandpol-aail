@@ -1,0 +1,38 @@
+# atom1 atom2   epsilon     sigma
+# epsilon: kcal/mol
+# sigma: A, angstrom
+# epsilon is not actually used, just here for better claricy
+# cation-cation
+# ch-ch
+OH      OH      0.170000    3.300000
+# cation-anion
+# ch-gly
+OH      NAG     0.068000    3.400000
+OH      O2G     0.075578    3.350000
+# ch-ala
+OH      NAL     0.068000    3.400000
+OH      O2A     0.075578    3.350000
+# ch-pro
+OH      NPR     0.061200    3.400000
+OH      O2P     0.068020    3.350000
+# ch-ser
+OH      NSE     0.066300    3.400000
+OH      O2S     0.073688    3.350000
+OH      OGS     0.066300    3.350000
+# anion-anion
+# gly-gly
+NAG     O2G     0.188944    3.350000
+NAG     NAG     0.170000    3.350000
+# ala-ala
+NAL     O2A     0.188944    3.350000
+NAL     NAL     0.170000    3.350000
+# pro-pro
+NPR     O2P     0.188944    3.350000
+NPR     NPR     0.170000    3.350000
+# ser-ser
+NSE     O2S     0.188944    3.350000
+NSE     NSE     0.170000    3.350000
+NSE     OGS     0.170000    3.350000
+# ogs-ogs is unchanged
+OGS     OGS     0.170000    3.120000
+OGS     O2S     0.188944    3.120000

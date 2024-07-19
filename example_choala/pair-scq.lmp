@@ -1,0 +1,136 @@
+pair_coeff    1    1 lj/cut/coul/long     0.170000     3.250000  # N4 N4
+pair_coeff    1    2 lj/cut/coul/long     0.105924     3.372684  # N4 C1
+pair_coeff    1    3 lj/cut/coul/long     0.071414     2.850439  # N4 H1
+pair_coeff    1    4 lj/cut/coul/long     0.105924     3.372684  # N4 C1A
+pair_coeff    1    5 lj/cut/coul/long     0.105924     3.372684  # N4 COL
+pair_coeff    1    6 lj/cut/coul/long     0.071414     2.850439  # N4 HC
+pair_coeff    1    7 lj/cut/coul/long     0.170000     3.184337  # N4 OH
+pair_coeff    1    8 lj/cut/coul/long     0.000000     0.000000  # N4 HO
+pair_coeff    1    9 lj/cut/coul/long     0.068000     3.274905  # N4 NAL ~
+pair_coeff    1   10 lj/cut/coul/long     0.000000     0.000000  # N4 HNA ~
+pair_coeff    1   11 lj/cut/coul/long     0.042370     3.372684  # N4 CAA ~
+pair_coeff    1   12 lj/cut/coul/long     0.028566     2.850439  # N4 HAA ~
+pair_coeff    1   13 lj/cut/coul/long     0.042370     3.372684  # N4 CBA ~
+pair_coeff    1   14 lj/cut/coul/long     0.028566     2.850439  # N4 HBA ~
+pair_coeff    1   15 lj/cut/coul/long     0.043635     3.396690  # N4 CO2A ~
+pair_coeff    1   16 lj/cut/coul/long     0.075578     3.101612  # N4 O2A ~
+pair_coeff    2    2 lj/cut/coul/long     0.065999     3.500000  # C1 C1
+pair_coeff    2    3 lj/cut/coul/long     0.044497     2.958040  # C1 H1
+pair_coeff    2    4 lj/cut/coul/long     0.065999     3.500000  # C1 C1A
+pair_coeff    2    5 lj/cut/coul/long     0.065999     3.500000  # C1 COL
+pair_coeff    2    6 lj/cut/coul/long     0.044497     2.958040  # C1 HC
+pair_coeff    2    7 lj/cut/coul/long     0.105924     3.304542  # C1 OH
+pair_coeff    2    8 lj/cut/coul/long     0.000000     0.000000  # C1 HO
+pair_coeff    2    9 lj/cut/coul/long     0.042370     3.398529  # C1 NAL ~
+pair_coeff    2   10 lj/cut/coul/long     0.000000     0.000000  # C1 HNA ~
+pair_coeff    2   11 lj/cut/coul/long     0.026400     3.500000  # C1 CAA ~
+pair_coeff    2   12 lj/cut/coul/long     0.017799     2.958040  # C1 HAA ~
+pair_coeff    2   13 lj/cut/coul/long     0.026400     3.500000  # C1 CBA ~
+pair_coeff    2   14 lj/cut/coul/long     0.017799     2.958040  # C1 HBA ~
+pair_coeff    2   15 lj/cut/coul/long     0.027188     3.524911  # C1 CO2A ~
+pair_coeff    2   16 lj/cut/coul/long     0.047091     3.218695  # C1 O2A ~
+pair_coeff    3    3 lj/cut/coul/long     0.030000     2.500000  # H1 H1
+pair_coeff    3    4 lj/cut/coul/long     0.044497     2.958040  # H1 C1A
+pair_coeff    3    5 lj/cut/coul/long     0.044497     2.958040  # H1 COL
+pair_coeff    3    6 lj/cut/coul/long     0.030000     2.500000  # H1 HC
+pair_coeff    3    7 lj/cut/coul/long     0.071414     2.792848  # H1 OH
+pair_coeff    3    8 lj/cut/coul/long     0.000000     0.000000  # H1 HO
+pair_coeff    3    9 lj/cut/coul/long     0.028566     2.872281  # H1 NAL ~
+pair_coeff    3   10 lj/cut/coul/long     0.000000     0.000000  # H1 HNA ~
+pair_coeff    3   11 lj/cut/coul/long     0.017799     2.958040  # H1 CAA ~
+pair_coeff    3   12 lj/cut/coul/long     0.012000     2.500000  # H1 HAA ~
+pair_coeff    3   13 lj/cut/coul/long     0.017799     2.958040  # H1 CBA ~
+pair_coeff    3   14 lj/cut/coul/long     0.012000     2.500000  # H1 HBA ~
+pair_coeff    3   15 lj/cut/coul/long     0.018330     2.979094  # H1 CO2A ~
+pair_coeff    3   16 lj/cut/coul/long     0.031749     2.720294  # H1 O2A ~
+pair_coeff    4    4 lj/cut/coul/long     0.065999     3.500000  # C1A C1A
+pair_coeff    4    5 lj/cut/coul/long     0.065999     3.500000  # C1A COL
+pair_coeff    4    6 lj/cut/coul/long     0.044497     2.958040  # C1A HC
+pair_coeff    4    7 lj/cut/coul/long     0.105924     3.304542  # C1A OH
+pair_coeff    4    8 lj/cut/coul/long     0.000000     0.000000  # C1A HO
+pair_coeff    4    9 lj/cut/coul/long     0.042370     3.398529  # C1A NAL ~
+pair_coeff    4   10 lj/cut/coul/long     0.000000     0.000000  # C1A HNA ~
+pair_coeff    4   11 lj/cut/coul/long     0.026400     3.500000  # C1A CAA ~
+pair_coeff    4   12 lj/cut/coul/long     0.017799     2.958040  # C1A HAA ~
+pair_coeff    4   13 lj/cut/coul/long     0.026400     3.500000  # C1A CBA ~
+pair_coeff    4   14 lj/cut/coul/long     0.017799     2.958040  # C1A HBA ~
+pair_coeff    4   15 lj/cut/coul/long     0.027188     3.524911  # C1A CO2A ~
+pair_coeff    4   16 lj/cut/coul/long     0.047091     3.218695  # C1A O2A ~
+pair_coeff    5    5 lj/cut/coul/long     0.065999     3.500000  # COL COL
+pair_coeff    5    6 lj/cut/coul/long     0.044497     2.958040  # COL HC
+pair_coeff    5    7 lj/cut/coul/long     0.105924     3.304542  # COL OH
+pair_coeff    5    8 lj/cut/coul/long     0.000000     0.000000  # COL HO
+pair_coeff    5    9 lj/cut/coul/long     0.042370     3.398529  # COL NAL ~
+pair_coeff    5   10 lj/cut/coul/long     0.000000     0.000000  # COL HNA ~
+pair_coeff    5   11 lj/cut/coul/long     0.026400     3.500000  # COL CAA ~
+pair_coeff    5   12 lj/cut/coul/long     0.017799     2.958040  # COL HAA ~
+pair_coeff    5   13 lj/cut/coul/long     0.026400     3.500000  # COL CBA ~
+pair_coeff    5   14 lj/cut/coul/long     0.017799     2.958040  # COL HBA ~
+pair_coeff    5   15 lj/cut/coul/long     0.027188     3.524911  # COL CO2A ~
+pair_coeff    5   16 lj/cut/coul/long     0.047091     3.218695  # COL O2A ~
+pair_coeff    6    6 lj/cut/coul/long     0.030000     2.500000  # HC HC
+pair_coeff    6    7 lj/cut/coul/long     0.071414     2.792848  # HC OH
+pair_coeff    6    8 lj/cut/coul/long     0.000000     0.000000  # HC HO
+pair_coeff    6    9 lj/cut/coul/long     0.028566     2.872281  # HC NAL ~
+pair_coeff    6   10 lj/cut/coul/long     0.000000     0.000000  # HC HNA ~
+pair_coeff    6   11 lj/cut/coul/long     0.017799     2.958040  # HC CAA ~
+pair_coeff    6   12 lj/cut/coul/long     0.012000     2.500000  # HC HAA ~
+pair_coeff    6   13 lj/cut/coul/long     0.017799     2.958040  # HC CBA ~
+pair_coeff    6   14 lj/cut/coul/long     0.012000     2.500000  # HC HBA ~
+pair_coeff    6   15 lj/cut/coul/long     0.018330     2.979094  # HC CO2A ~
+pair_coeff    6   16 lj/cut/coul/long     0.031749     2.720294  # HC O2A ~
+pair_coeff    7    7 lj/cut/coul/long     0.170000     3.120000  # OH OH
+pair_coeff    7    8 lj/cut/coul/long     0.000000     0.000000  # OH HO
+pair_coeff    7    9 lj/cut/coul/long     0.068000     3.208738  # OH NAL ~
+pair_coeff    7   10 lj/cut/coul/long     0.000000     0.000000  # OH HNA ~
+pair_coeff    7   11 lj/cut/coul/long     0.042370     3.304542  # OH CAA ~
+pair_coeff    7   12 lj/cut/coul/long     0.028566     2.792848  # OH HAA ~
+pair_coeff    7   13 lj/cut/coul/long     0.042370     3.304542  # OH CBA ~
+pair_coeff    7   14 lj/cut/coul/long     0.028566     2.792848  # OH HBA ~
+pair_coeff    7   15 lj/cut/coul/long     0.043635     3.328062  # OH CO2A ~
+pair_coeff    7   16 lj/cut/coul/long     0.075578     3.038947  # OH O2A ~
+pair_coeff    8    8 lj/cut/coul/long     0.000000     0.000000  # HO HO
+pair_coeff    8    9 lj/cut/coul/long     0.000000     0.000000  # HO NAL ~
+pair_coeff    8   10 lj/cut/coul/long     0.000000     0.000000  # HO HNA ~
+pair_coeff    8   11 lj/cut/coul/long     0.000000     0.000000  # HO CAA ~
+pair_coeff    8   12 lj/cut/coul/long     0.000000     0.000000  # HO HAA ~
+pair_coeff    8   13 lj/cut/coul/long     0.000000     0.000000  # HO CBA ~
+pair_coeff    8   14 lj/cut/coul/long     0.000000     0.000000  # HO HBA ~
+pair_coeff    8   15 lj/cut/coul/long     0.000000     0.000000  # HO CO2A ~
+pair_coeff    8   16 lj/cut/coul/long     0.000000     0.000000  # HO O2A ~
+pair_coeff    9    9 lj/cut/coul/long     0.170000     3.300000  # NAL NAL
+pair_coeff    9   10 lj/cut/coul/long     0.000000     0.000000  # NAL HNA
+pair_coeff    9   11 lj/cut/coul/long     0.105925     3.398529  # NAL CAA
+pair_coeff    9   12 lj/cut/coul/long     0.071414     2.872281  # NAL HAA
+pair_coeff    9   13 lj/cut/coul/long     0.105925     3.398529  # NAL CBA
+pair_coeff    9   14 lj/cut/coul/long     0.071414     2.872281  # NAL HBA
+pair_coeff    9   15 lj/cut/coul/long     0.109087     3.422718  # NAL CO2A
+pair_coeff    9   16 lj/cut/coul/long     0.188944     3.125380  # NAL O2A
+pair_coeff   10   10 lj/cut/coul/long     0.000000     0.000000  # HNA HNA
+pair_coeff   10   11 lj/cut/coul/long     0.000000     0.000000  # HNA CAA
+pair_coeff   10   12 lj/cut/coul/long     0.000000     0.000000  # HNA HAA
+pair_coeff   10   13 lj/cut/coul/long     0.000000     0.000000  # HNA CBA
+pair_coeff   10   14 lj/cut/coul/long     0.000000     0.000000  # HNA HBA
+pair_coeff   10   15 lj/cut/coul/long     0.000000     0.000000  # HNA CO2A
+pair_coeff   10   16 lj/cut/coul/long     0.000000     0.000000  # HNA O2A
+pair_coeff   11   11 lj/cut/coul/long     0.066000     3.500000  # CAA CAA
+pair_coeff   11   12 lj/cut/coul/long     0.044497     2.958040  # CAA HAA
+pair_coeff   11   13 lj/cut/coul/long     0.066000     3.500000  # CAA CBA
+pair_coeff   11   14 lj/cut/coul/long     0.044497     2.958040  # CAA HBA
+pair_coeff   11   15 lj/cut/coul/long     0.067971     3.524911  # CAA CO2A
+pair_coeff   11   16 lj/cut/coul/long     0.117729     3.218695  # CAA O2A
+pair_coeff   12   12 lj/cut/coul/long     0.030000     2.500000  # HAA HAA
+pair_coeff   12   13 lj/cut/coul/long     0.044497     2.958040  # HAA CBA
+pair_coeff   12   14 lj/cut/coul/long     0.030000     2.500000  # HAA HBA
+pair_coeff   12   15 lj/cut/coul/long     0.045826     2.979094  # HAA CO2A
+pair_coeff   12   16 lj/cut/coul/long     0.079373     2.720294  # HAA O2A
+pair_coeff   13   13 lj/cut/coul/long     0.066000     3.500000  # CBA CBA
+pair_coeff   13   14 lj/cut/coul/long     0.044497     2.958040  # CBA HBA
+pair_coeff   13   15 lj/cut/coul/long     0.067971     3.524911  # CBA CO2A
+pair_coeff   13   16 lj/cut/coul/long     0.117729     3.218695  # CBA O2A
+pair_coeff   14   14 lj/cut/coul/long     0.030000     2.500000  # HBA HBA
+pair_coeff   14   15 lj/cut/coul/long     0.045826     2.979094  # HBA CO2A
+pair_coeff   14   16 lj/cut/coul/long     0.079373     2.720294  # HBA O2A
+pair_coeff   15   15 lj/cut/coul/long     0.070000     3.550000  # CO2A CO2A
+pair_coeff   15   16 lj/cut/coul/long     0.121244     3.241605  # CO2A O2A
+pair_coeff   16   16 lj/cut/coul/long     0.210000     2.960000  # O2A O2A

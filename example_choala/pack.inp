@@ -1,0 +1,14 @@
+# created by fftool
+tolerance 2.5
+filetype xyz
+output simbox.xyz
+
+structure cholinium_pack.xyz
+  number 100
+  inside box 1.5000 1.5000 1.5000 38.5000 38.5000 38.5000
+end structure
+
+structure ala_pack.xyz
+  number 100
+  inside box 1.5000 1.5000 1.5000 38.5000 38.5000 38.5000
+end structure
