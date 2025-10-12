@@ -34,12 +34,11 @@ ccn3        -1.0      0.0078
 cl          -1.0      0.0000
 br          -1.0      0.0000
 # >>>
-# for amino acid anions, added by Chunyu
-SER         -1.0      4.5076
-GLY         -1.0      4.3543
-PRO         -1.0      8.5891
-BAL         -1.0      6.5246
-ALA         -1.0      5.0744
+# for amino acid anions
+SER         -1.0      4.1896
+GLY         -1.0      4.3204
+PRO         -1.0      9.6958
+ALA         -1.0      5.0382
 # <<<
 # neutral    
 C4H10        0.0      0.0000
@@ -78,11 +77,10 @@ P1111      oac     3.855
 P1111      fsi     4.226
 ch         cl      3.499    0.35
 # >>>
-# for amino acid anions, added by Chunyu
+# for amino acid anions
 ch         SER     4.721    0.44
 ch         GLY     3.630    0.40
 ch         PRO     5.008    0.36
-ch         BAL     4.650    0.44
 ch         ALA     3.950    0.40
 # <<<
 # cation-neutral
